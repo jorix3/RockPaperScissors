@@ -15,7 +15,7 @@ import android.support.v4.app.DialogFragment;
  */
 public class SelectDialogFragment extends DialogFragment {
     public interface SelectDialogListener {
-        public void onDialogClick(DialogFragment dialog, int id);
+        public void onSelectClick(DialogFragment dialog, int id);
     }
     
     public SelectDialogListener selectListener;
@@ -37,7 +37,7 @@ public class SelectDialogFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.choose)
                 .setItems(R.array.selections, (dialog, id) -> {
-                    selectListener.onDialogClick(SelectDialogFragment.this, id);
+                    selectListener.onSelectClick(SelectDialogFragment.this, id);
                 });
         return builder.create();
     }
